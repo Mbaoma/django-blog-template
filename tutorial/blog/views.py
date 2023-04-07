@@ -5,7 +5,7 @@ from django.http import HttpResponse
 posts = [
     {
         "title": "Saku's Blog",
-        "author": "Sakura-chan",
+        "author": "Sato-san",
         "content": "First post content",
 
     },
