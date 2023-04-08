@@ -6,10 +6,10 @@
           <div class="media-body">
             <div class="article-metadata">
                 <a class="mr-2" href="#">{{eachPost.author}}</a>
-                <small class="text-muted">{{ post.date_posted }}</small>
+                <small class="text-muted">{{ eachPost.date_posted|date:"F d, Y" }}</small>
               </div>
               <h2><a class="article-title" href="#">{{ eachPost.title }}</a></h2>
-              <p class="article-content">{{ post.content }}</p>
+              <p class="article-content">{{ eachPost.content }}</p>
             </div>
         </article>
     {% endfor %}
