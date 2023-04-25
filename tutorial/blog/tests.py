@@ -26,15 +26,20 @@ class PostModelTest(TestCase):
         post = Post.objects.get(id=1)
         expected_title = f'{post.title}'
         expected_content = f'{post.content}'
-        self.assertEquals(expected_title, 'Test Post')
-        self.assertEquals(expected_content, 'Hi, This is a test post')
+        self.assertEqual(expected_title, 'Test Post')
+        self.assertEqual(expected_content, 'Hi, This is a test post')
 
     def test_author(self):
         post = Post.objects.get(id=1)
         expected_author = f'{post.author}'
-        self.assertEquals(expected_author, 'testuser')
+        self.assertEqual(expected_author, 'testuser')
 
     def test_date_posted(self):
         post = Post.objects.get(id=1)
         expected_date_posted = f'{post.date_posted}'
-        self.assertEquals(expected_date_posted, timezone.now().strftime('%Y-%m-%d'))
+        self.assertEqual(expected_date_posted, timezone.now().strftime('%Y-%m-%d'))
+
+  
+    @classmethod
+    def tearDownClass(cls):
+        User.objects.all().delete()
